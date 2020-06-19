@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1C8F74C7-FD91-47F7-A7CD-8A0311314DAB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CommunityEpidemicManagementSystem</RootNamespace>
+    <AssemblyName>CommunityEpidemicManagementSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.1.11\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.1.11\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.20.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.20\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.EntityFramework, Version=8.0.20.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.EntityFramework.8.0.20\lib\net452\MySql.Data.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.20\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.20\lib\net452\Zstandard.Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dao\CommunityEpidemicManagementSystemContext.cs" />
+    <Compile Include="Entity\AdministratorTask.cs" />
+    <Compile Include="Entity\Emergency.cs" />
+    <Compile Include="Entity\HealthInformation.cs" />
+    <Compile Include="Entity\Resident.cs" />
+    <Compile Include="Entity\ResidentAccessManagement.cs" />
+    <Compile Include="Entity\ResidentMission.cs" />
+    <Compile Include="Entity\TravelRecord.cs" />
+    <Compile Include="Entity\User.cs" />
+    <Compile Include="Entity\VisitorAccessManagement.cs" />
+    <Compile Include="Entity\Worker.cs" />
+    <Compile Include="WindowsForm\Emergency\EmergencyAllocate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\Emergency\EmergencyAllocate.Designer.cs">
+      <DependentUpon>EmergencyAllocate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service\AdministratorTaskService.cs" />
+    <Compile Include="Service\EmergencyService.cs" />
+    <Compile Include="Service\HealthInformationService.cs" />
+    <Compile Include="Service\ResidentMissionService.cs" />
+    <Compile Include="Service\ResidentsAccessManagementService.cs" />
+    <Compile Include="Service\ResidentService.cs" />
+    <Compile Include="Service\TravelRecordService.cs" />
+    <Compile Include="Service\UserService.cs" />
+    <Compile Include="Service\VisitorsAccessManagementService.cs" />
+    <Compile Include="Service\WorkerService.cs" />
+    <Compile Include="WindowsForm\AdministratorMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\AdministratorMainForm.Designer.cs">
+      <DependentUpon>AdministratorMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\AdministratorTask\AdministratorTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\AdministratorTask\AdministratorTaskForm.Designer.cs">
+      <DependentUpon>AdministratorTaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\AdministratorTask\AdministratorTaskAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\AdministratorTask\AdministratorTaskAdd.Designer.cs">
+      <DependentUpon>AdministratorTaskAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\HealthInformation\HealthInfoAdministrator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\HealthInformation\HealthInfoAdministrator.Designer.cs">
+      <DependentUpon>HealthInfoAdministrator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\Emergency\EmergencyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\Emergency\EmergencyForm.Designer.cs">
+      <DependentUpon>EmergencyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\Information\InformationAdministrator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\Information\InformationAdministrator.Designer.cs">
+      <DependentUpon>InformationAdministrator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\ResidentMission\MissionAllocate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\ResidentMission\MissionAllocate.Designer.cs">
+      <DependentUpon>MissionAllocate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\ResidentsMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\ResidentsMainForm.Designer.cs">
+      <DependentUpon>ResidentsMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\TravelExperience\TravelExperience.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\TravelExperience\TravelExperience.Designer.cs">
+      <DependentUpon>TravelExperience.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\AccessManagement\AccessManagementAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\AccessManagement\AccessManagementAdd.Designer.cs">
+      <DependentUpon>AccessManagementAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\AccessManagement\AccessManagementAddOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\AccessManagement\AccessManagementAddOut.Designer.cs">
+      <DependentUpon>AccessManagementAddOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\AccessManagement\AccessManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\AccessManagement\AccessManagement.Designer.cs">
+      <DependentUpon>AccessManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\HealthInformation\HealthInfoResident.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\HealthInformation\HealthInfoResident.Designer.cs">
+      <DependentUpon>HealthInfoResident.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\HealthInformation\HealthInfoEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\HealthInformation\HealthInfoEdit.Designer.cs">
+      <DependentUpon>HealthInfoEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\Emergency\EmergencyAddResident.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\Emergency\EmergencyAddResident.Designer.cs">
+      <DependentUpon>EmergencyAddResident.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\ResidentMission\MissionAddResident.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\ResidentMission\MissionAddResident.Designer.cs">
+      <DependentUpon>MissionAddResident.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\ResidentMission\MissionList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\ResidentMission\MissionList.Designer.cs">
+      <DependentUpon>MissionList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WindowsForm\Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\Information\InformationEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\Information\InformationEdit.Designer.cs">
+      <DependentUpon>InformationEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\TravelExperience\TravelExperienceEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\TravelExperience\TravelExperienceEdit.Designer.cs">
+      <DependentUpon>TravelExperienceEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\Information\InformationResident.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\Information\InformationResident.Designer.cs">
+      <DependentUpon>InformationResident.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\ResidentMission\Mission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\ResidentMission\Mission.Designer.cs">
+      <DependentUpon>Mission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\WorkerMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\WorkerMainForm.Designer.cs">
+      <DependentUpon>WorkerMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\AdministratorTask\WorkerTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\AdministratorTask\WorkerTask.Designer.cs">
+      <DependentUpon>WorkerTask.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="WindowsForm\Emergency\EmergencyAllocate.resx">
+      <DependentUpon>EmergencyAllocate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\AdministratorMainForm.resx">
+      <DependentUpon>AdministratorMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\AdministratorTask\AdministratorTaskForm.resx">
+      <DependentUpon>AdministratorTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\AdministratorTask\AdministratorTaskAdd.resx">
+      <DependentUpon>AdministratorTaskAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\HealthInformation\HealthInfoAdministrator.resx">
+      <DependentUpon>HealthInfoAdministrator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\Emergency\EmergencyForm.resx">
+      <DependentUpon>EmergencyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\Information\InformationAdministrator.resx">
+      <DependentUpon>InformationAdministrator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\ResidentMission\MissionAllocate.resx">
+      <DependentUpon>MissionAllocate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\ResidentsMainForm.resx">
+      <DependentUpon>ResidentsMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\TravelExperience\TravelExperience.resx">
+      <DependentUpon>TravelExperience.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\AccessManagement\AccessManagementAdd.resx">
+      <DependentUpon>AccessManagementAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\AccessManagement\AccessManagementAddOut.resx">
+      <DependentUpon>AccessManagementAddOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\AccessManagement\AccessManagement.resx">
+      <DependentUpon>AccessManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\HealthInformation\HealthInfoResident.resx">
+      <DependentUpon>HealthInfoResident.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\HealthInformation\HealthInfoEdit.resx">
+      <DependentUpon>HealthInfoEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\Emergency\EmergencyAddResident.resx">
+      <DependentUpon>EmergencyAddResident.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\ResidentMission\MissionAddResident.resx">
+      <DependentUpon>MissionAddResident.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\ResidentMission\MissionList.resx">
+      <DependentUpon>MissionList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="WindowsForm\Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\Information\InformationEdit.resx">
+      <DependentUpon>InformationEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\TravelExperience\TravelExperienceEdit.resx">
+      <DependentUpon>TravelExperienceEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\Information\InformationResident.resx">
+      <DependentUpon>InformationResident.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\ResidentMission\Mission.resx">
+      <DependentUpon>Mission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\WorkerMainForm.resx">
+      <DependentUpon>WorkerMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\AdministratorTask\WorkerTask.resx">
+      <DependentUpon>WorkerTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
